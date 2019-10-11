@@ -5,58 +5,58 @@
 
 from qt4w import XPath
 from qt4w.webcontrols import WebPage, WebElement, InputElement, SelectElement
+from qt4c.keyboard import Keyboard
 
 
-class DemoPage(WebPage):
+class LoginPage(WebPage):
     '''Demo页面
     '''
     ui_map = {
-        'title': XPath('//div[@class="panel-heading"]'),
-        'name': {'type': InputElement, 'locator': XPath('//input[@id="name"]')},
-        'female': XPath('//input[@value="female"]'),
-        'male': XPath('//input[@value="male"]'),
-        'age': {'type': SelectElement, 'locator': XPath('//select[@id="age"]')},
-        'company': {'type': InputElement, 'locator': XPath('//input[@id="company"]')},
-        'submit': XPath('//button[@id="submit"]'),
+        'username': {'type': InputElement, 'locator': XPath('//*[@id="app"]/div/div[2]/div/div[2]/form/div[1]/div/div/input')},
+        'password': {'type': InputElement,'locator': XPath('//*[@id="app"]/div/div[2]/div/div[2]/form/div[2]/div/div/input')},
+        'login': XPath('//*[@id="app"]/div/div[2]/div/div[2]/form/button'),
     }
 
-    def set_name(self, name):
-        '''设置姓名
+    def set_username(self, username):
+        '''输入用户名
         '''
-        self.control('name').value = name
+        self.control('username').value = username
 
-    def set_female(self):
-        '''设置性别为女性
+    def set_password(self, password):
+        '''输入密码
         '''
-        self.control('female').click()
-
-    def set_male(self):
-        '''设置性别为男性
-        '''
-        self.control('male').click()
-
-    def set_age(self, age):
-        '''设置年龄
-        '''
-        self.control('age').selection = age
-
-    def set_company(self, company):
-        '''设置公司名
-        '''
-        self.control('company').value = company
+        self.control('password').value = password
 
     def submit(self):
-        '''提交
+        '''点击登录
         '''
-        self.control("submit").click()
+        self.control('login').click()
 
+    def login(self, username, password):
+        self.control('username').value = username
+        self.control('password').value = password
+        self.control('login').click()
+
+# class LandingPage(WebPage):
+#     '''落地页页面
+#     '''
+#     ui_map = {
+#         ''
+#     }
+#     def
+#
+# class DataPage(WebPage):
+#     '''数据页面
+#     '''
+#     ui_map = {
+#         ''
+#     }
+#     def
 
 class ProfilePage(WebPage):
     '''个人资料页
     '''
     ui_map = {
-        '用户名': XPath('//div[@id="name"]'),
-        '性别': XPath('//div[@id="sex"]'),
-        '年龄': XPath('//div[@id="age"]'),
-        '公司': XPath('//div[@id="company"]')
+        '用户名': XPath('//*[@id="home-container"]/div[2]/div[2]/span/span[1]'),
+        'err_msg': XPath('/html/body/div[3]/div/p')
     }

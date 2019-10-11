@@ -16,7 +16,7 @@ elif settings.QT4W_PLATFORM == 'Windows':
     WebTestBase = WindowsWebTestBase
 
 
-class WebDemoTestCase(WebTestBase):
+class TestCase(WebTestBase):
     '''Web demo测试用例基类
     '''
     pass
