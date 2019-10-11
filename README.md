@@ -27,9 +27,9 @@ tuia
 Testbase
 Testbase是测试框架基础，提供包括测试执行、报告和用例管理等基础功能。Testbase会被各个平台的QTA Driver所使用。
 
-快速入门、使用和接口文档请参考《Testbase文档》（https://qta-testbase.readthedocs.io/zh/latest/）。
+快速入门、使用和接口文档请参考《[Testbase文档](https://qta-testbase.readthedocs.io/zh/latest/)》。
 
 TUIA
 TUIA (Tencent UI Automation)是UI自动化基础库，为QTA各个平台下的客户端UI测试Driver所使用。
 
-快速入门、使用和接口文档请参考《TUIA文档》（https://qta-tuia.readthedocs.io/zh/latest/index.html）。
+快速入门、使用和接口文档请参考《[TUIA文档](https://qta-tuia.readthedocs.io/zh/latest/index.html)》。
